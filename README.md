@@ -22,3 +22,6 @@ Dokumentacija se treba sastojati od sljedećih dijelova (poglavlja):
 - Zaključak - treba sadržavati procjenu tehnologije kao platforme za implementaciju odabrane aplikacijske domene, ograničenja implementacije i sl.
 
 Dokumentaciju valja pisati u skladu s pravilnikom o seminarskim i završnim radovima (obratiti pozornost na izgled početne stranice, citiranje izvora i literaturu, numeriranje tablica, prikaza, slika i grafikona itd.). Dokumentacija se predaje u obliku jedinstvene arhive koja sadrži PDF datoteku izrađenu isključivo na temelju LaTeX predloška zajedno sa svim datotekama na temelju kojih je napravljena (bib, tex, bst, cls, slike itd.).
+
+
+--------U folderu datasets se nalazi skripta za instaliranje MongoDB, pokretanje servera, te popunjavanje baze sa datasetovima----------------

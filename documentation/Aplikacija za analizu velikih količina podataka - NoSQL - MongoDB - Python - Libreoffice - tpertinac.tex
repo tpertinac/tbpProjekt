@@ -39,7 +39,7 @@ Raznolikost govori o tome da podaci nisu dovoljno strukturirani, da su često ne
 Iako se ovdje govori o velikoj količini podataka svejedno nam je važna brzina da  dovoljno brzo i u nekom konačnom, realnom i prihvatljivom vremenu izvučemo za korisnika važne mu podatke koje se kasnije i koriste pri kreiranju izvještaja i za analizu podataka.\\
 Pošto se u big data prikupljaju mnogi podaci te se u toj gomili podataka mogu vidjeti realna stanja stvari a to znači i kvalitetu podataka pa zbog toga se negdje i spominje termin vjerodostojnosti u big data.\\
 Osim tog termina spominje se još i termin varijabilnosti koji označava da se značenje podataka stalno mijenja. 
-U nekim slučajevima čak se zna i naići na još dvije karakteristike. Jedna od njih je vizualizacija gdje je jasno da iz te velike količine podataka se mogu izvući oni bitni i ključni za nekog korisnika, i na temelju njih se mogu raditi analiz i grafovi iz kojih možemo iščitati neke važne inforacije. Te drugi termin je vrijednost, a tu se smatra upravo poslovna vrijednost ili trošak pri korištenju big data tehnologija gdje se važe koliko zapravo korištenje big data tehnologija ima benefita za samo poslovanje.
+U nekim slučajevima čak se zna i naići na još dvije karakteristike. Jedna od njih je vizualizacija gdje je jasno da iz te velike količine podataka se mogu izvući oni bitni i ključni za nekog korisnika, i na temelju njih se mogu raditi analiz i grafovi iz kojih možemo iščitati neke važne inforacije. Te drugi termin je vrijednost, a tu se smatra upravo poslovna vrijednost ili trošak pri korištenju big data tehnologija gdje se važe koliko zapravo korištenje big data tehnologija ima benefita za samo poslovanje.\citep{WikiBD}
 
 \chapter{Polustrukturirane baze podataka}
 U današnje vrijeme gdje večina svijeta ima pristup internetu, ne čudi da se javila potreba za nekom drugim načinom implementacije baza podataka osim za relacijskim modelom. Tako se zbog sve više korisnika povećava i konstatno obujam podataka koji kruži preko mreže. Tu u igru dolaze polustrukturirani podaci u kojima su informacije sadržane unutar podataka pa se i još znaju zvati "self-describing" ili samo opisne. Polustrukturirani modeli podataka se najčešće prikazuju preko staba. Kod stabla postoji korijen koji predstavlja neki objekt, a vrijednosti se nalaze u svim ostalim birdovima tog stabla.\\
@@ -65,6 +65,8 @@ ima popularan i gotov Query Language - SQL.\\
 \item Uklanjanjem ograničenja iz modela podataka
 sve se manje promišlja da je potrebno razraditi unos podataka.
 \end{itemize}
+\citep{SSDB}
+
 
 \chapter{NoSQL}
 NoSQL baze podataak su baze za pohranu i dohvaćanje podataka koje koriste podosta drugačije principe spram klasičnih relacijskih baza podataka koji koriste tablasti model. NoSQL se još i nazivaju Not Only SQL a se da zaključiti da zapravo podržavaju standradne SQL upite ali i više od toga. Najbitnija razlika je ta da ne koriste Join upite koji su veoma specifični za klasični SQL. Dok spomenemo NoSQL baze podataka tada to povezujemo i sa pojmovima da nisu relacijske, da su distribuirane, otvorenog koda i horizontalno skalabilne.
@@ -76,12 +78,12 @@ NoSQL baze podataak su baze za pohranu i dohvaćanje podataka koje koriste podos
 \item Široko-stupaste baze kao što je npr. Cassandra i HBase su optimizirane za upite nad velikim skupovima podataka. te spremaju stupce podataka zajedno umjesto u redove.
 \end{itemize}
 
-NoSQL je odgovor na relacijske baze podataka koje imaju čvrstu strukturu. U današnje vrijeme se sve više koriste agilne metodologije razvoja programskog proizvoda te zbog toga se i često mijenja struktura podataka te tu NoSQL ima prednost jer jednostavnije se nosi sa tim izazovim i zahtjevima. Na slici(\ref{slika-1}). možemo vidjeti ukratko koje su razlike između SQL baza podataka i NoSQL baza podataka.
+NoSQL je odgovor na relacijske baze podataka koje imaju čvrstu strukturu. U današnje vrijeme se sve više koriste agilne metodologije razvoja programskog proizvoda te zbog toga se i često mijenja struktura podataka te tu NoSQL ima prednost jer jednostavnije se nosi sa tim izazovim i zahtjevima. Na slici(\ref{slika-1}). možemo vidjeti ukratko koje su razlike između SQL baza podataka i NoSQL baza podataka. \citep{NoSQL}
 
 \begin{figure}[h]
 \centering 
 \includegraphics[width=0.95\textwidth]{sql_vs_nosql.jpg}
-\caption{SQL vs NoSQL \citep{https://www.mongodb.com/nosql-explained}}
+\caption{SQL vs NoSQL \citep{}}
 \label{slika-1}
 \end{figure}
 
@@ -89,11 +91,13 @@ NoSQL je odgovor na relacijske baze podataka koje imaju čvrstu strukturu. U dan
 MongoDB je open-source dokument baza podataka a zapis u MongoDB bazi zove se dokument, koji je podatkovna struktura sastavljena od parova ključeva i njihovih vrijednosti. MongoDB dokumenti su strukturom slični JSON objektima. Vrijednosti polja mogu uključivati i druge dokumente, polja te listu polja.\\
 MongoDB sprema BSON dokumente u kolekcije. Što se tiče same razlike u terminologiji kod klasičnih relacijskih baza imamo tablice a to se kod MongoDB-a zovu kolekcije, isto tako redak se zove dokument a stupa je polje.
 Rad sa MongoDB-om može ići preko terminala odnosno komadnom linijom ili preko nekih programa za vizualizaciju i olakšano korištenje MongoDB-a kao što je Robomongo. MongoDb ne koristi baš klasične sql upite već pruža neke metode. Tako npr. imamo metode za unos dokumenata u kolekciju(db.collection.insert()), pa za klasičan selekt upit postoji metoda find() nad kojom možemo još i definirat neke dodatne uvjete. Isto tako imamo i metodu update(), delete() te remove(). Postoje i malo specifičnije nabrojene CRUD metode koje se mogu odnosi na samo jedan zapis u kolekciji ili više njih itd.\\
-Operacije agregiranja procesiraju zapise podataka i vračaju izračunate rezultate. Takve funkcije obrađuju podatke i prikazuju rezultat u potrebnom obliku. Agregirajuče operacije koriste kolekcije i dokumente kao ulaz i izlaz, poput upita. MongoDB pruža tri načina za izvršavanje agregacije podataka a to su agregacijski cjevovod, map-reduce te agregirajuče funkcije jednostavne svrhe.
+Operacije agregiranja procesiraju zapise podataka i vračaju izračunate rezultate. Takve funkcije obrađuju podatke i prikazuju rezultat u potrebnom obliku. Agregirajuče operacije koriste kolekcije i dokumente kao ulaz i izlaz, poput upita. MongoDB pruža tri načina za izvršavanje agregacije podataka a to su agregacijski cjevovod, map-reduce te agregirajuče funkcije jednostavne svrhe. \citep{MongoDB}
 
 \chapter{Izrada baze podataka u MongoDB}
 Za početak trebamo skinuti i instalirati MongoDB bazu podataka. Pošto se za operacijski sustav koristi Ubuntu, to ćemo obaviti preko naredba u terminalu i apt sustava za upravljanje paketima.\\
 Prvo utipkamo naredbu za uvođenje javnog ključa
+
+
 \definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
 \lstset{commentstyle=\textit,language=python}
 \lstset{backgroundcolor=\color{lbcolor},rulecolor=}
@@ -101,7 +105,11 @@ Prvo utipkamo naredbu za uvođenje javnog ključa
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80
 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 \end{lstlisting}
+
+
 Zatim kreiramo listu datoteka za Ubuntu verziju koju koristimo, u ovom slučaju je to 16.04
+
+
 \definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
 \lstset{commentstyle=\textit,language=python}
 \lstset{backgroundcolor=\color{lbcolor},rulecolor=}
@@ -110,36 +118,55 @@ echo "deb [ arch=amd64,arm64 ]
 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" 
 | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
 \end{lstlisting}
+
+
 Nakon toga učitamo lokalnu bazu podataka paketa
+
+
 \definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
 \lstset{commentstyle=\textit,language=python}
 \lstset{backgroundcolor=\color{lbcolor},rulecolor=}
 \begin{lstlisting}[frame=tb]
 sudo apt-get update
 \end{lstlisting}
+
+
 Sada konačno možemo skinuti i instalirati MongoDB
+
+
 \definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
 \lstset{commentstyle=\textit,language=python}
 \lstset{backgroundcolor=\color{lbcolor},rulecolor=}
 \begin{lstlisting}[frame=tb]
 sudo apt-get install -y mongodb-org
 \end{lstlisting}
+
+
 Nakon što smo to odradili možemo pokrenuti lokalni server sa naredbom
+
+
 \definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
 \lstset{commentstyle=\textit,language=python}
 \lstset{backgroundcolor=\color{lbcolor},rulecolor=}
 \begin{lstlisting}[frame=tb]
 sudo service mongod start
 \end{lstlisting}
+
+
 Naredbe za provjeru statusa servera, resetiranje i zaustavljanje su sljedeće:
+
+
 \definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
 \lstset{commentstyle=\textit,language=python}
 \lstset{backgroundcolor=\color{lbcolor},rulecolor=}
 \begin{lstlisting}[frame=tb]
 sudo service mongod {status|restart|stop}
 \end{lstlisting}
+
+
 Kada bi htjeli nešto testirati i odraditi neke administratorske stvari onda bi utipkali naredbu \textit{mongo} bi nam se tada otvorilo JavaScript shell sučelje za MongoDB.
 Za ovu aplikaciju koristimo gotove skupove podataka koji su vezani za rudarenja virtualnih valuta. Tako na slici(\ref{slika-2}) vidimo otprilike kako izgleda model baze u ovoj aplikaciji. 
+
 
 \begin{figure}[h]
 \centering 
@@ -147,6 +174,7 @@ Za ovu aplikaciju koristimo gotove skupove podataka koji su vezani za rudarenja 
 \caption{Model baze}
 \label{slika-2}
 \end{figure}
+
 
 Dolje možemo vidjeti dio koda, odnosno JSON-a jednog od kriptovaluta:
 \definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
@@ -164,6 +192,7 @@ Dolje možemo vidjeti dio koda, odnosno JSON-a jednog od kriptovaluta:
  }
 \end{lstlisting}
 
+
 Da konkretnije pojasnimo:
 \begin{itemize}
 \item Date : datu promatranja
@@ -175,6 +204,7 @@ Da konkretnije pojasnimo:
 \item Market Cap : Tržišna kapitalizacija u USD
 \end{itemize}
 
+
 Za ovaj projekt smo kreirali novu bazu pod nazivom tbp:
 \definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
 \lstset{commentstyle=\textit,language=python}
@@ -183,6 +213,8 @@ Za ovaj projekt smo kreirali novu bazu pod nazivom tbp:
 # mongo
 > use tbp
 \end{lstlisting}
+
+
 Zatim smo svaki od skupa podataka dodali u bazu:
 \definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
 \lstset{commentstyle=\textit,language=python}
@@ -202,8 +234,10 @@ mongoimport --db tbp --collection ripple --file ripple.json
 
 Nakon svih ovih radnji, naša baza je spremna za rad s aplikacijom.
 
-\chapter{Model aplikacije}
-Aplikacija u ovom projektu za logiku koristi python programski jezik. Konkretno koristio se PyCharm community ide za lakši razvoj aplikacije. Tako se u pythonu nalazi isprogramirana logika koja se povezuje na MongoDB bazu, radi određene radnji tako da dohvaća određene podake ovisno o upitu te ih zapisuje u LibreOffice te ukoliko odaberemo određene radnje stvara i gafove kroz koje možemo vidjeti neku analizu stanja kriptovaluta(\ref{slika-3}).
+
+\chapter{Aplikacija}
+Aplikacija u ovom projektu za logiku koristi python programski jezik. Konkretno koristio se PyCharm community ide za lakši razvoj aplikacije. Tako se u pythonu nalazi isprogramirana logika koja se povezuje na MongoDB bazu, radi određene radnji tako da dohvaća određene podake ovisno o upitu te ih zapisuje u LibreOffice Calcu te ukoliko odaberemo određene radnje stvara i gafove kroz koje možemo vidjeti neku analizu stanja kriptovaluta(\ref{slika-3}).
+
 
 \begin{figure}[h]
 \centering 
@@ -213,22 +247,422 @@ Aplikacija u ovom projektu za logiku koristi python programski jezik. Konkretno 
 \end{figure}
 
 
+Što se tiče same logike i koda, za početak imamo biblioteke koje koristimo. Tako nam subprocess služi da možemo pozivati programe van pythona kao npr terminal ili libreoffice calc. Nakon toga imamo biblioteku time koja nam koristi za pozivanje sleep metode. Biblioteke xlwt i pyoo nam služe za rad sa LibreOffice calcom, odnosno jedna je korištena za samo upisivanje a druga za izradu grafova. Biblioteka os nam služi za dohvaćanje putanje projekta. Biblioteka tkinter nam je osnovna biblioteka za prikaz objekata na ekran(prozor, gumbi, popisi). Te za kraj imamo pymongo biblioteku koja nam služi za spajanje na MongoDB bazu. \citep{pyoo}, \citep{xlwt}
 
 
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{commentstyle=\textit,language=python}
+\lstset{backgroundcolor=\color{lbcolor},rulecolor=}
+\begin{lstlisting}[frame=tb]
+import subprocess
+import time
+import xlwt
+import pyoo
+import os
+import tkinter.messagebox
+from tkinter import *
+from pymongo import MongoClient
+\end{lstlisting}
 
 
+Zatim na početku prvo pozivamo konstruktor klase te se spajamo na bazu i spremamo našu tbp bazu u db varijablu koju dalje prosljeđujemo metodama koje će je koristit kako se nebi trebali svaki puta ponovno spajati na bazu. Osim toga stvaramo početni prozor, gubove, listu, njihove funkcionalnosti i položaj u prozoru.
+ 
+ 
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{commentstyle=\textit,language=python}
+\lstset{backgroundcolor=\color{lbcolor},rulecolor=}
+\begin{lstlisting}[frame=tb]
+class MiningCoins(Frame):
+
+    def __init__(self, master):
+        try:
+            #subprocess.Popen(['service mongod start'], shell=True)
+            #time.sleep(5)
+            client = MongoClient('mongodb://localhost:27017/')
+            db = client['tbp']
+        except ConnectionRefusedError:
+            tkinter.messageBox.showinfo('MongoDB connection error', 
+            'Nije moguce se spojiti na MongoDB!')
+        frame = Frame(master)
+        frame.grid()
+        label = Label(frame, text = "Dobrodosli!")
+        label.grid(row=0, column=1)
+        btnCoin = Button(frame, text = "Prikaz po coinovima", 
+        command=lambda: self.coin(db))
+        btnCoin.grid(row=1)
+        btnKat = Button(frame, text = "Prikaz po kategorijama", 
+        command=lambda: self.category(db))
+        btnKat.grid(row=2)
+        btnGKat = Button(frame, text="Graficki prikaz za kategorije", 
+        command=self.grafKat)
+        btnGKat.grid(row=2, column=1)
+        lbGod = Listbox(frame, height=3, exportselection=0)
+        lbGod.insert(0, "2017")
+        lbGod.insert(1, "2016")
+        lbGod.insert(2, "2015")
+        lbGod.grid(row = 3)
+        lbKat = Listbox(frame, height=6, exportselection=0)
+        lbKat.insert(0, "Open")
+        lbKat.insert(1, "High")
+        lbKat.insert(2, "Low")
+        lbKat.insert(3, "Close")
+        lbKat.insert(4, "Volume")
+        lbKat.insert(5, "Market Cap")
+        lbKat.grid(row=3, column=1)
+        lbCoi = Listbox(frame, height=5, exportselection=0)
+        lbCoi.insert(0, "Bitcoin")
+        lbCoi.insert(1, "Ethereum")
+        lbCoi.insert(2, "Litecoin")
+        lbCoi.insert(3, "Monero")
+        lbCoi.insert(4, "Ripple")
+        lbCoi.grid(row=3, column=2)
+        btnP = Button(frame, text="Napravi pojedinacnu analizu", 
+        command=lambda: self.analiza(db, lbGod.get(ACTIVE), 
+        lbKat.get(ACTIVE), lbCoi.get(ACTIVE)))
+        btnP.grid(row=4, column=1)
+        btnQuit = Button(frame, text="Izadi", command=frame.quit)
+        btnQuit.grid(row=5, column=4)
+\end{lstlisting}
 
 
+\begin{figure}[h]
+\centering 
+\includegraphics[width=0.95\textwidth]{aplikacija.png}
+\caption{Aplikacija}
+\label{slika-4}
+\end{figure}
 
 
+Prva metoda koju koristimo je coin(db) koja jednostano dohvaća sve kolekcije iz baze i sve dokumente iz svake kolekcije i upisuje u LibreOffice Calc dokument na način da svaka kolekcija se nalazi u vlastitom sheetu.
 
 
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{commentstyle=\textit,language=python}
+\lstset{backgroundcolor=\color{lbcolor},rulecolor=}
+\begin{lstlisting}[frame=tb]
+def coin(self, db):
+	bit = db.bitcoin.find()
+	eth = db.ethereum.find()
+	lit = db.litecoin.find()
+	mon = db.monero.find()
+	rip = db.ripple.find()
+
+	cursors = list([bit, eth, lit, mon, rip])
+
+	wb = xlwt.Workbook()
+
+	sheetB = wb.add_sheet("Bitcoin")
+	sheetE = wb.add_sheet("Etherium")
+	sheetL = wb.add_sheet("Litecoin")
+	sheetM = wb.add_sheet("Monero")
+	sheetR = wb.add_sheet("Ripple")
+
+	sheet = list([sheetB, sheetE, sheetL, sheetM, sheetR])
+
+	for s in sheet:
+	    s.write(0, 0, 'Datum')
+	    s.write(0, 1, 'Open')
+	    s.write(0, 2, 'High')
+	    s.write(0, 3, 'Low')
+	    s.write(0, 4, 'Close')
+	    s.write(0, 5, 'Volume')
+	    s.write(0, 6, 'Market Cap')
 
 
+	i = 0
+	for c in cursors:
+	    j = 1
+	    for row in c:
+		sheet[i].write(j, 0, str(row['Date']))
+		sheet[i].write(j, 1, float(row['Open']))
+		sheet[i].write(j, 2, float(row['High']))
+		sheet[i].write(j, 3, float(row['Low']))
+		sheet[i].write(j, 4, float(row['Close']))
+		sheet[i].write(j, 5, str(row['Volume']))
+		sheet[i].write(j, 6, str(row['Market Cap']))
+		j = j + 1
+	    i = i + 1
+
+	reportDir = os.path.dirname(os.path.abspath('reports')) 
+				+ "/reports/"
+	wb.save(reportDir + "coinovi.ods")
+	subprocess.call(['/usr/bin/localc', reportDir 
+					+ 'coinovi.ods'])
+\end{lstlisting}
 
 
+\begin{figure}[h]
+\centering 
+\includegraphics[width=0.95\textwidth]{coinovi.png}
+\caption{Prkaz svih kriptovaluta i vrijednosti}
+\label{slika-5}
+\end{figure}
 
 
+Druga metoda category(db) također radi istu stvar da povlači sve kolekcije i sve dokumente svake od kolekcije ali ovoga puta spremamo te zapise na način da svaki sheet označava jednu kategoriju odnosno atribut koji je zajednički svim tim kolekcijama.
 
+
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{commentstyle=\textit,language=python}
+\lstset{backgroundcolor=\color{lbcolor},rulecolor=}
+\begin{lstlisting}[frame=tb]
+def category(self, db):
+	lim = db.ethereum.count()
+
+	eth = db.ethereum.find()
+	bit = db.bitcoin.find().limit(lim)
+	lit = db.litecoin.find().limit(lim)
+	mon = db.monero.find().limit(lim)
+	rip = db.ripple.find().limit(lim)
+
+	cursors = list([bit, eth, lit, mon, rip])
+
+	wb = xlwt.Workbook()
+
+	sheetO = wb.add_sheet("Open")
+	sheetH = wb.add_sheet("High")
+	sheetL = wb.add_sheet("Low")
+	sheetC = wb.add_sheet("Close")
+	sheetV = wb.add_sheet("Volume")
+	sheetMC = wb.add_sheet("Market Cap")
+
+	sheet = list([sheetO, sheetH, sheetL, 
+					sheetC, sheetV, sheetMC])
+
+	for s in sheet:
+	    s.write(0, 0, 'Datum')
+	    s.write(0, 1, 'Bitcoin')
+	    s.write(0, 2, 'Ethereum')
+	    s.write(0, 3, 'Litecoin')
+	    s.write(0, 4, 'Monero')
+	    s.write(0, 5, 'Ripple')
+
+	i = 1
+	for row in bit:
+	    for s in sheet:
+		s.write(i, 0, str(row['Date']))
+	    sheet[0].write(i, 1, float(row['Open']))
+	    sheet[1].write(i, 1, float(row['High']))
+	    sheet[2].write(i, 1, float(row['Low']))
+	    sheet[3].write(i, 1, float(row['Close']))
+	    sheet[4].write(i, 1, int(str(row['Volume'])
+	    				.replace(',', '')))
+	    sheet[5].write(i, 1, int(str(row['Market Cap'])
+	    				.replace(',', '')))
+	    i = i + 1
+
+	j = 1
+	for c in cursors:
+	    i = 1
+	    for row in c:
+		sheet[0].write(i, j, float(row['Open']))
+		sheet[1].write(i, j, float(row['High']))
+		sheet[2].write(i, j, float(row['Low']))
+		sheet[3].write(i, j, float(row['Close']))
+		sheet[4].write(i, j, int(str(row['Volume'])
+						.replace(',','')))
+		sheet[5].write(i, j, int(str(row['Market Cap'])
+						.replace(',','')))
+		i = i + 1
+	    j = j + 1
+
+	reportDir = os.path.dirname(os.path.abspath('reports')) 
+				+ "/reports/"
+	wb.save(reportDir + "kategorije.ods")
+	subprocess.call(['/usr/bin/localc', reportDir 
+				+ 'kategorije.ods'])
+\end{lstlisting}
+
+
+\begin{figure}[h]
+\centering 
+\includegraphics[width=0.95\textwidth]{kategorije.png}
+\caption{Kategorijzacija}
+\label{slika-6}
+\end{figure}
+
+
+Treća metoda grafKat() prvo poziva terminal kako bi pokrenula dana naredba i kako bi se time napravio soffice socket kako bi uopće mogli koristiti funkcije pyoo biblioteke. Tako otvaramo dokument kategorije kojeg smo gore kreirali, ili vraćamo grešku ukoliko još nije kreiran. Zatim na temelju zapisa u Calc datoteci za svaki sheet radimo graf koji prikazuje usporedbu fluktuacija za određenu kategoriju po svakoj od kriptovaluta.
+
+
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{commentstyle=\textit,language=python}
+\lstset{backgroundcolor=\color{lbcolor},rulecolor=}
+\begin{lstlisting}[frame=tb]
+def grafKat(self):
+    try:
+        subprocess.Popen(['soffice
+        accept="socket,host=localhost,port=2002;urp;" 
+        --norestore --nologo --nodefault # --headless'],
+        shell=True)
+        time.sleep(2)
+        desktop = pyoo.Desktop('localhost', 2002)
+        reportKat = os.path.dirname(os.path.abspath('reports')) 
+        + "/reports/kategorije.ods"
+        doc = desktop.open_spreadsheet(reportKat)
+
+        sheet1 = doc.sheets[0]
+        sheet2 = doc.sheets[1]
+        sheet3 = doc.sheets[2]
+        sheet4 = doc.sheets[3]
+        sheet5 = doc.sheets[4]
+        sheet6 = doc.sheets[5]
+
+        chart = sheet1.charts.create('Open', sheet1[2:50, 7:18], 
+        sheet1[0:740, 0:6], row_header=TRUE, col_header=TRUE)
+        diagram = chart.change_type(pyoo.LineDiagram)
+        diagram.y_axis.title = "USD"
+        diagram.y_axis.logarithmic = True
+
+        chart = sheet2.charts.create('High', sheet2[2:50, 7:18], sheet2[0:740, 0:6], 
+        row_header=TRUE, col_header=TRUE)
+        diagram = chart.change_type(pyoo.LineDiagram)
+        diagram.y_axis.title = "USD"
+        diagram.y_axis.logarithmic = True
+
+        chart = sheet3.charts.create('Low', sheet3[2:50, 7:18], 
+        sheet3[0:740, 0:6], row_header=TRUE, col_header=TRUE)
+        diagram = chart.change_type(pyoo.LineDiagram)
+        diagram.y_axis.title = "USD"
+        diagram.y_axis.logarithmic = True
+
+        chart = sheet4.charts.create('Close', sheet4[2:50, 7:18], 
+        sheet4[0:740, 0:6], row_header=TRUE, col_header=TRUE)
+        diagram = chart.change_type(pyoo.LineDiagram)
+        diagram.y_axis.title = "USD"
+        diagram.y_axis.logarithmic = True
+
+        chart = sheet5.charts.create('Volume', 
+        sheet5[2:28, 7:18], sheet5[0:740, 0:6], 
+        row_header=TRUE, col_header=TRUE)
+        diagram = chart.change_type(pyoo.LineDiagram)
+        diagram.y_axis.title = "USD"
+        diagram.y_axis.logarithmic = True
+
+        chart = sheet6.charts.create('Market Cap', 
+        sheet6[2:28, 7:18], sheet6[0:740, 0:6], 
+        row_header=TRUE, col_header=TRUE)
+        diagram = chart.change_type(pyoo.LineDiagram)
+        diagram.y_axis.title = "USD"
+        diagram.y_axis.logarithmic = True
+
+        reportDir = os.path.dirname(os.path.abspath('reports')) 
+        			+ "/reports/"
+        doc.save(reportDir + 'grafovi.ods')
+    except:
+        tkinter.messagebox.showinfo('Dokument ne postoji', 
+        'Potrebno je prvo generirati prikaz kategorija!')
+\end{lstlisting}
+
+
+\begin{figure}[h]
+\centering 
+\includegraphics[width=0.95\textwidth]{grafovi.png}
+\caption{Grafovi po kategorijama}
+\label{slika-7}
+\end{figure}
+
+
+Četvrta metoda analiza(db, god, cat, coi) na temelju primljenih argumenata specificira upit nad kojom kriptovalutom će se napraviti, za koju godinu i koju kategoriju te na temelju dobivenog Calc dokumenta radi graf iz kojeg opet možemo radit neku analizu kretanja vrijednosti kriptovalute ovisno o odabranim parametrima.
+
+
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{commentstyle=\textit,language=python}
+\lstset{backgroundcolor=\color{lbcolor},rulecolor=}
+\begin{lstlisting}[frame=tb]
+def analiza(self, db, god, cat, coi):
+
+	if coi == 'Bitcoin':
+	    cursor = db.bitcoin.find({'Date': {'$regex': god}}, 
+	    {'Date' : 1, cat: 1})
+
+	elif coi == 'Ethereum':
+	    cursor = db.ethereum.find({'Date': {'$regex': god}}, 
+	    {'Date' : 1, cat: 1})
+
+	elif coi == 'Litecoin':
+	    cursor = db.litecoin.find({'Date': {'$regex': god}}, 
+	    {'Date' : 1, cat: 1})
+
+	elif coi == 'Monero':
+	    cursor = db.monero.find({'Date': {'$regex': god}}, 
+	    {'Date' : 1, cat: 1})
+
+	elif coi == 'Ripple':
+	    cursor = db.ripple.find({'Date': {'$regex': god}}, 
+	    {'Date' : 1, cat: 1})
+
+	wb = xlwt.Workbook()
+
+	sheet = wb.add_sheet(coi)
+
+	sheet.write(0, 0, 'Datum')
+	sheet.write(0, 1, cat)
+
+
+	i = 1
+	for row in cursor:
+	    sheet.write(i, 0, str(row['Date']))
+	    if (cat == 'Volume' or cat == 'Market Cap'):
+		sheet.write(i, 1, int(str(row[cat]).replace(',', '')))
+	    else:
+		sheet.write(i, 1, float(row[cat]))
+	    i = i + 1
+
+	reportDir = os.path.dirname(os.path.abspath('reports')) 
+				+ "/reports/"
+	wb.save(reportDir + "analiza.ods")
+
+	subprocess.Popen(['soffice --accept="socket,host=localhost,
+	port=2002;urp;" --norestore --nologo --nodefault # --headless'],
+		         shell=True)
+	time.sleep(2)
+	desktop = pyoo.Desktop('localhost', 2002)
+	reportKat = os.path.dirname(os.path.abspath('reports')) 
+				+ "/reports/analiza.ods"
+	doc = desktop.open_spreadsheet(reportKat)
+
+	sheet1 = doc.sheets[0]
+
+	chart = sheet1.charts.create(cat, sheet1[2:20, 4:20], 
+	sheet1[0:cursor.count()+1, 0:2], row_header=TRUE, 
+	col_header=TRUE)
+	diagram = chart.change_type(pyoo.LineDiagram)
+	diagram.y_axis.title = "USD"
+	diagram.y_axis.logarithmic = True
+
+	reportDir = os.path.dirname(os.path.abspath('reports')) 
+				+ "/reports/"
+	doc.save(reportDir + 'analiza.ods')
+\end{lstlisting}
+
+
+\begin{figure}[h]
+\centering 
+\includegraphics[width=0.95\textwidth]{analiza.png}
+\caption{Prikaz grafa za korisničke određene paremetre}
+\label{slika-8}
+\end{figure}
+
+
+Za kraj imamo linije koda koje instaciraju objekat klase Tk() koji nam služi dza definiranje prozora i njegovih objekata, te pozivamo sami kontruktor klase kako bi se pokrenuo program.
+
+
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{commentstyle=\textit,language=python}
+\lstset{backgroundcolor=\color{lbcolor},rulecolor=}
+\begin{lstlisting}[frame=tb]
+root = Tk()
+root.title("TBP Projekt")
+mc = MiningCoins(root)
+root.mainloop()
+\end{lstlisting}
+
+
+\chapter{Zaključak}
+U ovom projektu vidjeli smo što je to pojam big data, kako je on povezan sa polustrukturiranim podacima, kakvu oni strukturu imaju i zašto su korisni. Isto tako smo se upoznali sa NoSQL-om te uvidjeli razlike sa klasičnim SQL-om odnosno relacijskim modelom. Vidjeli smo i što je to MongoDB, čemu služi, kako se koristi. Kroz rad je bilo prikazano kako instalirati MongoDB na Ubuntu 16.04 kako se koristi, kako smo kreirali bazu i dodali skupove podataka, na koji način se python može povezati na MongoDB bazu te kako smo pomoću pythona te podatke prikazali na sučelje LibreOffice Calca. S pythonom se to dalo lijepo odraditi ali nedostaje još malo nekih dodatnih mogućnosti sa bibliotekama te je teško pronaći dobre primjere i dokumentaciju za korištenje biblioteka koje mogu radit sa LibreOffice Calcom. Međutim, na kraju se može uvidjeti da su se uspješno napravili određeni grafovi iz kojih se može izvući neka analiza podataka iz baze, te bi se lako aplikacija mogla nadograditi da ima još neke dodatne grafove za recimo još nižu razinu po mjesecu ili da se uzmu samo određene kriptovalute za određene parametre. 
+
+\addcontentsline{toc}{chapter}{Bibliografija}
+\bibliography{foi.bib}
 
 \end{document}

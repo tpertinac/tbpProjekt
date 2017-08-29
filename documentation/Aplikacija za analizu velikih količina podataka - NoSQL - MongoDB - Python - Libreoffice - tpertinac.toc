@@ -1,8 +1,0 @@
-\select@language {croatian}
-\contentsline {chapter}{\numberline {1}Uvod}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Big Data}{2}{chapter.2}
-\contentsline {chapter}{\numberline {3}Polustrukturirane baze podataka}{3}{chapter.3}
-\contentsline {chapter}{\numberline {4}NoSQL}{4}{chapter.4}
-\contentsline {chapter}{\numberline {5}MongoDB}{6}{chapter.5}
-\contentsline {chapter}{\numberline {6}Izrada baze podataka u MongoDB}{7}{chapter.6}
-\contentsline {chapter}{\numberline {7}Model aplikacije}{10}{chapter.7}
